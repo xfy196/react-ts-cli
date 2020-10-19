@@ -2,7 +2,7 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-
+console.log(process.env)
 module.exports = {
   entry: {
     "scripts/index": path.resolve(__dirname, "../src/index.tsx"),
@@ -27,7 +27,6 @@ module.exports = {
             plugins: [
               ["@babel/plugin-proposal-decorators", { "legacy": true }],
               ["@babel/plugin-proposal-class-properties", { "loose": true }],
-              ["import", { libraryName: "antd-mobile", style: "css" }]
             ]
           }
         }
@@ -84,7 +83,7 @@ module.exports = {
       "baseUI": path.resolve(__dirname, "../src/baseUI/"),
       "utils": path.resolve(__dirname, "../src/utils/")
     },
-    extensions: [".js", ".css", ".jsx", ".ts", ".tsx"]
+    extensions: [".ts", ".tsx", ".js", ".jsx", ".css"]
   },
   plugins: [
     new MiniCssExtractPlugin({
